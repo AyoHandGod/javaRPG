@@ -1,12 +1,16 @@
-package dev.ayohandgod;
+package dev.ayohandgod.bludborne;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import dev.ayohandgod.bludborne.screens.MainGameScreen;
 
-public class BludBorneGame extends ApplicationAdapter {
+public class BludBorneGame extends Game {
+
+	public static final MainGameScreen _mainGameScreen = new MainGameScreen();
 	SpriteBatch batch;
 	Texture img;
 	
@@ -14,6 +18,7 @@ public class BludBorneGame extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+		setScreen(_mainGameScreen);
 	}
 
 	@Override
@@ -29,5 +34,6 @@ public class BludBorneGame extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
+		_mainGameScreen.dispose();
 	}
 }
