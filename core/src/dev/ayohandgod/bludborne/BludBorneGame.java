@@ -8,12 +8,18 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import dev.ayohandgod.bludborne.screens.MainGameScreen;
 
+/** The type Blud borne game. */
 public class BludBorneGame extends Game {
 
-	public static final MainGameScreen _mainGameScreen = new MainGameScreen();
-	SpriteBatch batch;
-	Texture img;
-	
+  /** The constant _mainGameScreen. */
+  public static final MainGameScreen _mainGameScreen = new MainGameScreen();
+
+  /** The Batch. */
+  SpriteBatch batch;
+
+  /** The Img. */
+  Texture img;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
