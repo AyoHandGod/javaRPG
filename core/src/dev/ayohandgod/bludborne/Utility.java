@@ -8,7 +8,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
-/** The type Utility. */
+/** The Utility class is a placeholder for various methods
+ * including loading and unloading game assets.
+ * */
 public class Utility {
 
   /** The constant _assetManager. */
@@ -21,7 +23,7 @@ public class Utility {
   /**
    * Unload asset.
    *
-   * @param assetFilenamePath the asset filename path
+   * @param assetFilenamePath the filename path to target asset as String.
    */
   public static void unloadAsset(String assetFilenamePath) {
     if (_assetManager.isLoaded(assetFilenamePath)) {
@@ -32,42 +34,46 @@ public class Utility {
   }
 
   /**
-   * Load completed float.
+   * Percentage of loading completed.
    *
-   * @return the float
+   * @return the loading percentage as a float.
    */
   public static float loadCompleted() {
     return _assetManager.getProgress();
   }
 
   /**
-   * Number assets queued int.
+   * Return the number of assets queued.
    *
-   * @return the int
+   * @return int representing the number of assets in queue.
    */
   public static int numberAssetsQueued() {
     return _assetManager.getQueuedAssets();
   }
 
   /**
-   * Update asset loading boolean.
+   * Whether or not asset is currently loading.
    *
-   * @return the boolean
+   * @return True if asset loading.
    */
   public static boolean updateAssetLoading() {
     return _assetManager.update();
   }
 
   /**
-   * Determine if asset loaded boolean.
+   * Determine if asset loaded provided asset filename..
    *
-   * @param filename the filename
-   * @return the boolean
+   * @param filename the filename of the asset.
+   * @return true if the asset is loaded.
    */
   public static boolean isAssetLoaded(String filename) {
     return _assetManager.isLoaded(filename);
   }
 
+    /**
+     * load Map asset, provided file name path to asset.
+     * @param mapFilenamePath the path to the map asset.
+     */
   public static void loadMapAsset(String mapFilenamePath) {
       if ( mapFilenamePath == null || mapFilenamePath.isEmpty() ) {
           return;
@@ -88,6 +94,11 @@ public class Utility {
       }
   }
 
+    /**
+     * Return map object, provided file name path to asset.
+     * @param mapFilenamePath path to asset.
+     * @return TileMap object of asset.
+     */
   public static TiledMap getMapAsset(String mapFilenamePath) {
       TiledMap map = null;
 
@@ -99,6 +110,10 @@ public class Utility {
       return map;
   }
 
+    /**
+     * Load Texture asset, provided file name path to asset.
+     * @param textureFilenamePath path to texture asset.
+     */
   public static void loadTextureAsset(String textureFilenamePath) {
       if( textureFilenamePath ==  null || textureFilenamePath.isEmpty()) {
           return;
@@ -115,6 +130,11 @@ public class Utility {
       }
   }
 
+    /**
+     * Return Texture object, provided file name path to asset.
+     * @param textureFilenamePath path to Texture object.
+     * @return Texture object of asset.
+     */
   public static Texture getTextureAsset(String textureFilenamePath) {
       Texture texture = null;
 
