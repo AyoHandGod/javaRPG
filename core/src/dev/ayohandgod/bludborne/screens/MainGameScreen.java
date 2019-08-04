@@ -108,6 +108,11 @@ public class MainGameScreen implements Screen {
       _mapRenderer.dispose();
   }
 
+    /**
+     * Configure viewport convenience class for maintaining camera viewport.
+     * @param width viewport virtual width.
+     * @param height viewport virtual height.
+     */
   private void setupViewport(int width, int height) {
 
       // Make the viewport a percentage of the total display area
@@ -146,6 +151,13 @@ public class MainGameScreen implements Screen {
               VIEWPORT.physicalHeight + ")");
   }
 
+    /**
+     * Defines hitbox for objects on collision layer.
+     *
+     * Test if objects's hitbox against all rectangle objects on collision layer of TileMap map.
+     * @param boundingBox Bounding box of the object.
+     * @return True if bounding box overlaps another object on collision layer.
+     */
   private boolean isCollisionWithMapLayer(Rectangle boundingBox) {
       MapLayer mapCollisionLayer = _mapMgr.getCollisionLayer();
 
@@ -165,6 +177,7 @@ public class MainGameScreen implements Screen {
       }
       return false;
   }
+
 
   private boolean updatePortalLayerActivation(Rectangle boundingBox) {
       MapLayer mapPortalLayer = _mapMgr.getPortalLayer();
